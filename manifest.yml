@@ -1,0 +1,24 @@
+permissions:
+  content:
+    scripts:
+      - 'unsafe-hashes'
+      - 'unsafe-inline'
+modules:
+  jira:projectPage:
+    - key: simple-custom-ui
+      resource: main
+      resolver:
+        function: resolver
+      title: simple-custom-ui
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+    tunnel: 
+      port: 3000    
+app:
+  id: ari:cloud:ecosystem::app/66e03929-044c-4d8b-91d3-7b9f785ea252
+  name: simple-custom-ui
+  
